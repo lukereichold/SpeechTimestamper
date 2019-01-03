@@ -13,6 +13,11 @@
 		C3DEFBF421DED3120072C31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF221DED3120072C31F /* Main.storyboard */; };
 		C3DEFBF621DED3130072C31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF521DED3130072C31F /* Assets.xcassets */; };
 		C3DEFBF921DED3130072C31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF721DED3130072C31F /* LaunchScreen.storyboard */; };
+		C3DEFC0521DED5CD0072C31F /* descriptor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0021DED5C80072C31F /* descriptor.pb.swift */; };
+		C3DEFC0621DED5CD0072C31F /* language_service.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0121DED5CC0072C31F /* language_service.grpc.swift */; };
+		C3DEFC0721DED5CD0072C31F /* http.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0221DED5CC0072C31F /* http.pb.swift */; };
+		C3DEFC0821DED5CD0072C31F /* language_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0321DED5CC0072C31F /* language_service.pb.swift */; };
+		C3DEFC0921DED5CD0072C31F /* annotations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0421DED5CC0072C31F /* annotations.pb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		C3DEFBF521DED3130072C31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3DEFBF821DED3130072C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3DEFBFA21DED3130072C31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DEFC0021DED5C80072C31F /* descriptor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = descriptor.pb.swift; sourceTree = "<group>"; };
+		C3DEFC0121DED5CC0072C31F /* language_service.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = language_service.grpc.swift; sourceTree = "<group>"; };
+		C3DEFC0221DED5CC0072C31F /* http.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = http.pb.swift; sourceTree = "<group>"; };
+		C3DEFC0321DED5CC0072C31F /* language_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = language_service.pb.swift; sourceTree = "<group>"; };
+		C3DEFC0421DED5CC0072C31F /* annotations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = annotations.pb.swift; sourceTree = "<group>"; };
 		C97D325DB953B803F7DF3156 /* Pods-SpeechTimestamper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTimestamper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechTimestamper/Pods-SpeechTimestamper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2415CEC0043A1A1C194F7D4 /* Pods_SpeechTimestamper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeechTimestamper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,6 +73,11 @@
 			children = (
 				C3DEFBEE21DED3120072C31F /* AppDelegate.swift */,
 				C3DEFBF021DED3120072C31F /* ViewController.swift */,
+				C3DEFC0421DED5CC0072C31F /* annotations.pb.swift */,
+				C3DEFC0021DED5C80072C31F /* descriptor.pb.swift */,
+				C3DEFC0221DED5CC0072C31F /* http.pb.swift */,
+				C3DEFC0121DED5CC0072C31F /* language_service.grpc.swift */,
+				C3DEFC0321DED5CC0072C31F /* language_service.pb.swift */,
 				C3DEFBF221DED3120072C31F /* Main.storyboard */,
 				C3DEFBF521DED3130072C31F /* Assets.xcassets */,
 				C3DEFBF721DED3130072C31F /* LaunchScreen.storyboard */,
@@ -216,8 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3DEFC0721DED5CD0072C31F /* http.pb.swift in Sources */,
+				C3DEFC0921DED5CD0072C31F /* annotations.pb.swift in Sources */,
+				C3DEFC0621DED5CD0072C31F /* language_service.grpc.swift in Sources */,
 				C3DEFBF121DED3120072C31F /* ViewController.swift in Sources */,
 				C3DEFBEF21DED3120072C31F /* AppDelegate.swift in Sources */,
+				C3DEFC0821DED5CD0072C31F /* language_service.pb.swift in Sources */,
+				C3DEFC0521DED5CD0072C31F /* descriptor.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

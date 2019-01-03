@@ -19,9 +19,9 @@ protoc \
 	google/api/http.proto \
 	google/protobuf/descriptor.proto \
  	-Igoogleapis \
-	-I../../Google/common/include \
+	-Iinclude \
 	--swift_out=googleapis \
 	--swiftgrpc_out=googleapis
 
 # move Swift files to the sources directory
-find googleapis -name "*.swift" -exec mv {} NaturalLanguage \;
+find googleapis -name "*.swift" -exec mv {} SpeechTimestamper \;

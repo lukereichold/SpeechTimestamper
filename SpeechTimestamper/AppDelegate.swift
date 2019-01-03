@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  SpeechTimestamper
-//
-//  Created by Luke Reichold on 1/3/19.
-//  Copyright © 2019 Reikam Labs. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

@@ -662,61 +662,7 @@ struct Google_Protobuf_EnumDescriptorProto {
   /// Clears the value of `options`. Subsequent reads from it will return its default value.
   mutating func clearOptions() {_uniqueStorage()._options = nil}
 
-  /// Range of reserved numeric values. Reserved numeric values may not be used
-  /// by enum values in the same enum declaration. Reserved ranges may not
-  /// overlap.
-  var reservedRange: [Google_Protobuf_EnumDescriptorProto.EnumReservedRange] {
-    get {return _storage._reservedRange}
-    set {_uniqueStorage()._reservedRange = newValue}
-  }
-
-  /// Reserved enum value names, which may not be reused. A given name may only
-  /// be reserved once.
-  var reservedName: [String] {
-    get {return _storage._reservedName}
-    set {_uniqueStorage()._reservedName = newValue}
-  }
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  /// Range of reserved numeric values. Reserved values may not be used by
-  /// entries in the same enum. Reserved ranges may not overlap.
-  ///
-  /// Note that this is distinct from DescriptorProto.ReservedRange in that it
-  /// is inclusive such that it can appropriately represent the entire int32
-  /// domain.
-  struct EnumReservedRange {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    /// Inclusive.
-    var start: Int32 {
-      get {return _start ?? 0}
-      set {_start = newValue}
-    }
-    /// Returns true if `start` has been explicitly set.
-    var hasStart: Bool {return self._start != nil}
-    /// Clears the value of `start`. Subsequent reads from it will return its default value.
-    mutating func clearStart() {self._start = nil}
-
-    /// Inclusive.
-    var end: Int32 {
-      get {return _end ?? 0}
-      set {_end = newValue}
-    }
-    /// Returns true if `end` has been explicitly set.
-    var hasEnd: Bool {return self._end != nil}
-    /// Clears the value of `end`. Subsequent reads from it will return its default value.
-    mutating func clearEnd() {self._end = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _start: Int32? = nil
-    fileprivate var _end: Int32? = nil
-  }
 
   init() {}
 
@@ -1092,32 +1038,7 @@ struct Google_Protobuf_FileOptions: SwiftProtobuf.ExtensibleMessage {
   /// Clears the value of `phpNamespace`. Subsequent reads from it will return its default value.
   mutating func clearPhpNamespace() {_uniqueStorage()._phpNamespace = nil}
 
-  /// Use this option to change the namespace of php generated metadata classes.
-  /// Default is empty. When this option is empty, the proto file name will be used
-  /// for determining the namespace.
-  var phpMetadataNamespace: String {
-    get {return _storage._phpMetadataNamespace ?? String()}
-    set {_uniqueStorage()._phpMetadataNamespace = newValue}
-  }
-  /// Returns true if `phpMetadataNamespace` has been explicitly set.
-  var hasPhpMetadataNamespace: Bool {return _storage._phpMetadataNamespace != nil}
-  /// Clears the value of `phpMetadataNamespace`. Subsequent reads from it will return its default value.
-  mutating func clearPhpMetadataNamespace() {_uniqueStorage()._phpMetadataNamespace = nil}
-
-  /// Use this option to change the package of ruby generated classes. Default
-  /// is empty. When this option is not set, the package name will be used for
-  /// determining the ruby package.
-  var rubyPackage: String {
-    get {return _storage._rubyPackage ?? String()}
-    set {_uniqueStorage()._rubyPackage = newValue}
-  }
-  /// Returns true if `rubyPackage` has been explicitly set.
-  var hasRubyPackage: Bool {return _storage._rubyPackage != nil}
-  /// Clears the value of `rubyPackage`. Subsequent reads from it will return its default value.
-  mutating func clearRubyPackage() {_uniqueStorage()._rubyPackage = nil}
-
-  /// The parser stores options it doesn't recognize here.
-  /// See the documentation for the "Options" section above.
+  /// The parser stores options it doesn't recognize here. See above.
   var uninterpretedOption: [Google_Protobuf_UninterpretedOption] {
     get {return _storage._uninterpretedOption}
     set {_uniqueStorage()._uninterpretedOption = newValue}
@@ -2788,16 +2709,12 @@ extension Google_Protobuf_EnumDescriptorProto: SwiftProtobuf.Message, SwiftProto
     1: .same(proto: "name"),
     2: .same(proto: "value"),
     3: .same(proto: "options"),
-    4: .standard(proto: "reserved_range"),
-    5: .standard(proto: "reserved_name"),
   ]
 
   fileprivate class _StorageClass {
     var _name: String? = nil
     var _value: [Google_Protobuf_EnumValueDescriptorProto] = []
     var _options: Google_Protobuf_EnumOptions? = nil
-    var _reservedRange: [Google_Protobuf_EnumDescriptorProto.EnumReservedRange] = []
-    var _reservedName: [String] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -2807,8 +2724,6 @@ extension Google_Protobuf_EnumDescriptorProto: SwiftProtobuf.Message, SwiftProto
       _name = source._name
       _value = source._value
       _options = source._options
-      _reservedRange = source._reservedRange
-      _reservedName = source._reservedName
     }
   }
 
@@ -2835,8 +2750,6 @@ extension Google_Protobuf_EnumDescriptorProto: SwiftProtobuf.Message, SwiftProto
         case 1: try decoder.decodeSingularStringField(value: &_storage._name)
         case 2: try decoder.decodeRepeatedMessageField(value: &_storage._value)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._options)
-        case 4: try decoder.decodeRepeatedMessageField(value: &_storage._reservedRange)
-        case 5: try decoder.decodeRepeatedStringField(value: &_storage._reservedName)
         default: break
         }
       }
@@ -2854,12 +2767,6 @@ extension Google_Protobuf_EnumDescriptorProto: SwiftProtobuf.Message, SwiftProto
       if let v = _storage._options {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
-      if !_storage._reservedRange.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._reservedRange, fieldNumber: 4)
-      }
-      if !_storage._reservedName.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._reservedName, fieldNumber: 5)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2872,47 +2779,10 @@ extension Google_Protobuf_EnumDescriptorProto: SwiftProtobuf.Message, SwiftProto
         if _storage._name != rhs_storage._name {return false}
         if _storage._value != rhs_storage._value {return false}
         if _storage._options != rhs_storage._options {return false}
-        if _storage._reservedRange != rhs_storage._reservedRange {return false}
-        if _storage._reservedName != rhs_storage._reservedName {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Google_Protobuf_EnumDescriptorProto.EnumReservedRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = Google_Protobuf_EnumDescriptorProto.protoMessageName + ".EnumReservedRange"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "start"),
-    2: .same(proto: "end"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularInt32Field(value: &self._start)
-      case 2: try decoder.decodeSingularInt32Field(value: &self._end)
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._start {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._end {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Google_Protobuf_EnumDescriptorProto.EnumReservedRange, rhs: Google_Protobuf_EnumDescriptorProto.EnumReservedRange) -> Bool {
-    if lhs._start != rhs._start {return false}
-    if lhs._end != rhs._end {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3208,7 +3078,7 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
     16: .standard(proto: "cc_generic_services"),
     17: .standard(proto: "java_generic_services"),
     18: .standard(proto: "py_generic_services"),
-    42: .standard(proto: "php_generic_services"),
+    19: .standard(proto: "php_generic_services"),
     23: .same(proto: "deprecated"),
     31: .standard(proto: "cc_enable_arenas"),
     36: .standard(proto: "objc_class_prefix"),
@@ -3216,8 +3086,6 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
     39: .standard(proto: "swift_prefix"),
     40: .standard(proto: "php_class_prefix"),
     41: .standard(proto: "php_namespace"),
-    44: .standard(proto: "php_metadata_namespace"),
-    45: .standard(proto: "ruby_package"),
     999: .standard(proto: "uninterpreted_option"),
   ]
 
@@ -3240,8 +3108,6 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _swiftPrefix: String? = nil
     var _phpClassPrefix: String? = nil
     var _phpNamespace: String? = nil
-    var _phpMetadataNamespace: String? = nil
-    var _rubyPackage: String? = nil
     var _uninterpretedOption: [Google_Protobuf_UninterpretedOption] = []
 
     static let defaultInstance = _StorageClass()
@@ -3267,8 +3133,6 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _swiftPrefix = source._swiftPrefix
       _phpClassPrefix = source._phpClassPrefix
       _phpNamespace = source._phpNamespace
-      _phpMetadataNamespace = source._phpMetadataNamespace
-      _rubyPackage = source._rubyPackage
       _uninterpretedOption = source._uninterpretedOption
     }
   }
@@ -3301,6 +3165,7 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 16: try decoder.decodeSingularBoolField(value: &_storage._ccGenericServices)
         case 17: try decoder.decodeSingularBoolField(value: &_storage._javaGenericServices)
         case 18: try decoder.decodeSingularBoolField(value: &_storage._pyGenericServices)
+        case 19: try decoder.decodeSingularBoolField(value: &_storage._phpGenericServices)
         case 20: try decoder.decodeSingularBoolField(value: &_storage._javaGenerateEqualsAndHash)
         case 23: try decoder.decodeSingularBoolField(value: &_storage._deprecated)
         case 27: try decoder.decodeSingularBoolField(value: &_storage._javaStringCheckUtf8)
@@ -3310,9 +3175,6 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 39: try decoder.decodeSingularStringField(value: &_storage._swiftPrefix)
         case 40: try decoder.decodeSingularStringField(value: &_storage._phpClassPrefix)
         case 41: try decoder.decodeSingularStringField(value: &_storage._phpNamespace)
-        case 42: try decoder.decodeSingularBoolField(value: &_storage._phpGenericServices)
-        case 44: try decoder.decodeSingularStringField(value: &_storage._phpMetadataNamespace)
-        case 45: try decoder.decodeSingularStringField(value: &_storage._rubyPackage)
         case 999: try decoder.decodeRepeatedMessageField(value: &_storage._uninterpretedOption)
         case 1000..<536870912:
           try decoder.decodeExtensionField(values: &_protobuf_extensionFieldValues, messageType: Google_Protobuf_FileOptions.self, fieldNumber: fieldNumber)
@@ -3348,6 +3210,9 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if let v = _storage._pyGenericServices {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 18)
       }
+      if let v = _storage._phpGenericServices {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 19)
+      }
       if let v = _storage._javaGenerateEqualsAndHash {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 20)
       }
@@ -3374,15 +3239,6 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
       }
       if let v = _storage._phpNamespace {
         try visitor.visitSingularStringField(value: v, fieldNumber: 41)
-      }
-      if let v = _storage._phpGenericServices {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 42)
-      }
-      if let v = _storage._phpMetadataNamespace {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 44)
-      }
-      if let v = _storage._rubyPackage {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 45)
       }
       if !_storage._uninterpretedOption.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._uninterpretedOption, fieldNumber: 999)
@@ -3415,8 +3271,6 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._swiftPrefix != rhs_storage._swiftPrefix {return false}
         if _storage._phpClassPrefix != rhs_storage._phpClassPrefix {return false}
         if _storage._phpNamespace != rhs_storage._phpNamespace {return false}
-        if _storage._phpMetadataNamespace != rhs_storage._phpMetadataNamespace {return false}
-        if _storage._rubyPackage != rhs_storage._rubyPackage {return false}
         if _storage._uninterpretedOption != rhs_storage._uninterpretedOption {return false}
         return true
       }
