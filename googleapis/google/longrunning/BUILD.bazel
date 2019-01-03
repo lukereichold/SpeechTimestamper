@@ -1,0 +1,32 @@
+load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
+
+# This is an API workspace, having public visibility by default makes perfect sense.
+package(default_visibility = ["//visibility:public"])
+
+##############################################################################
+# Common
+##############################################################################
+proto_library(
+    name = "operations_proto",
+    srcs = ["operations.proto"],
+    deps = [
+        "//google/api:annotations_proto",
+        "//google/rpc:status_proto",
+        "@com_google_protobuf//:any_proto",
+        "@com_google_protobuf//:empty_proto",
+    ],
+)
+
+##############################################################################
+# Java
+##############################################################################
+java_proto_library(
+    name = "longrunning_java_proto",
+    deps = [":operations_proto"],
+)
+
+java_grpc_library(
+    name = "longrunning_java_grpc",
+    srcs = [":operations_proto"],
+    deps = [":longrunning_java_proto"],
+)

@@ -1,0 +1,56 @@
+load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
+load("@com_google_api_codegen//rules_gapic/java:java_gapic.bzl", "java_resource_name_proto_library")
+
+# This is an API workspace, having public visibility by default makes perfect sense.
+package(default_visibility = ["//visibility:public"])
+
+##############################################################################
+# Common
+##############################################################################
+proto_library(
+    name = "http_request_proto",
+    srcs = ["http_request.proto"],
+    deps = [
+        "//google/api:annotations_proto",
+        "@com_google_protobuf//:duration_proto",
+    ],
+)
+
+proto_library(
+    name = "log_severity_proto",
+    srcs = ["log_severity.proto"],
+    deps = [
+        "//google/api:annotations_proto",
+        "@com_google_protobuf//:duration_proto",
+    ],
+)
+
+
+##############################################################################
+# Java
+##############################################################################
+java_proto_library(
+    name = "type_java_proto",
+    deps = [
+        ":http_request_proto",
+        ":log_severity_proto"
+    ],
+)
+
+#java_grpc_library(
+#    name = "type_java_grpc",
+#    srcs = [
+#        ":http_request_proto",
+#        "log_severity_proto",
+#    ],
+#    deps = [":type_java_proto"],
+#)
+
+java_resource_name_proto_library(
+    name = "type_resource_name_java_proto",
+    gapic_yaml = "//google/logging/v2:logging_gapic.yaml",
+    deps = [
+        ":http_request_proto",
+        ":log_severity_proto",
+    ],
+)

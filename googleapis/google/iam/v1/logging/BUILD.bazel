@@ -1,0 +1,24 @@
+# This is an API workspace, having public visibility by default makes perfect sense.
+package(default_visibility = ["//visibility:public"])
+
+##############################################################################
+# Common
+##############################################################################
+proto_library(
+    name = "audit_data_proto",
+    srcs = [
+        "audit_data.proto",
+    ],
+    deps = [
+        "//google/api:annotations_proto",
+        "//google/iam/v1:policy_proto",
+    ],
+)
+
+##############################################################################
+# Java
+##############################################################################
+java_proto_library(
+    name = "logging_java_proto",
+    deps = [":audit_data_proto"],
+)
