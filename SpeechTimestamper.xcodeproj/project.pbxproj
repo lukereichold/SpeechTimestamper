@@ -13,11 +13,16 @@
 		C3DEFBF421DED3120072C31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF221DED3120072C31F /* Main.storyboard */; };
 		C3DEFBF621DED3130072C31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF521DED3130072C31F /* Assets.xcassets */; };
 		C3DEFBF921DED3130072C31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF721DED3130072C31F /* LaunchScreen.storyboard */; };
-		C3DEFC0521DED5CD0072C31F /* descriptor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0021DED5C80072C31F /* descriptor.pb.swift */; };
-		C3DEFC0621DED5CD0072C31F /* language_service.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0121DED5CC0072C31F /* language_service.grpc.swift */; };
-		C3DEFC0721DED5CD0072C31F /* http.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0221DED5CC0072C31F /* http.pb.swift */; };
-		C3DEFC0821DED5CD0072C31F /* language_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0321DED5CC0072C31F /* language_service.pb.swift */; };
-		C3DEFC0921DED5CD0072C31F /* annotations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC0421DED5CC0072C31F /* annotations.pb.swift */; };
+		C3DEFC2D21DEDA330072C31F /* status.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2321DEDA320072C31F /* status.pb.swift */; };
+		C3DEFC2E21DEDA330072C31F /* http.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2421DEDA320072C31F /* http.pb.swift */; };
+		C3DEFC2F21DEDA330072C31F /* descriptor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2521DEDA320072C31F /* descriptor.pb.swift */; };
+		C3DEFC3021DEDA330072C31F /* error_details.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2621DEDA320072C31F /* error_details.pb.swift */; };
+		C3DEFC3121DEDA330072C31F /* annotations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2721DEDA330072C31F /* annotations.pb.swift */; };
+		C3DEFC3221DEDA330072C31F /* code.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2821DEDA330072C31F /* code.pb.swift */; };
+		C3DEFC3321DEDA330072C31F /* cloud_speech.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2921DEDA330072C31F /* cloud_speech.pb.swift */; };
+		C3DEFC3421DEDA330072C31F /* operations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2A21DEDA330072C31F /* operations.pb.swift */; };
+		C3DEFC3521DEDA330072C31F /* cloud_speech.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2B21DEDA330072C31F /* cloud_speech.grpc.swift */; };
+		C3DEFC3621DEDA330072C31F /* operations.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC2C21DEDA330072C31F /* operations.grpc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +34,16 @@
 		C3DEFBF521DED3130072C31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3DEFBF821DED3130072C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3DEFBFA21DED3130072C31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3DEFC0021DED5C80072C31F /* descriptor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = descriptor.pb.swift; sourceTree = "<group>"; };
-		C3DEFC0121DED5CC0072C31F /* language_service.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = language_service.grpc.swift; sourceTree = "<group>"; };
-		C3DEFC0221DED5CC0072C31F /* http.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = http.pb.swift; sourceTree = "<group>"; };
-		C3DEFC0321DED5CC0072C31F /* language_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = language_service.pb.swift; sourceTree = "<group>"; };
-		C3DEFC0421DED5CC0072C31F /* annotations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = annotations.pb.swift; sourceTree = "<group>"; };
+		C3DEFC2321DEDA320072C31F /* status.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = status.pb.swift; path = SpeechTimestamper/status.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2421DEDA320072C31F /* http.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = http.pb.swift; path = SpeechTimestamper/http.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2521DEDA320072C31F /* descriptor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = descriptor.pb.swift; path = SpeechTimestamper/descriptor.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2621DEDA320072C31F /* error_details.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = error_details.pb.swift; path = SpeechTimestamper/error_details.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2721DEDA330072C31F /* annotations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = annotations.pb.swift; path = SpeechTimestamper/annotations.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2821DEDA330072C31F /* code.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = code.pb.swift; path = SpeechTimestamper/code.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2921DEDA330072C31F /* cloud_speech.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = cloud_speech.pb.swift; path = SpeechTimestamper/cloud_speech.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2A21DEDA330072C31F /* operations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = operations.pb.swift; path = SpeechTimestamper/operations.pb.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2B21DEDA330072C31F /* cloud_speech.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = cloud_speech.grpc.swift; path = SpeechTimestamper/cloud_speech.grpc.swift; sourceTree = SOURCE_ROOT; };
+		C3DEFC2C21DEDA330072C31F /* operations.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = operations.grpc.swift; path = SpeechTimestamper/operations.grpc.swift; sourceTree = SOURCE_ROOT; };
 		C97D325DB953B803F7DF3156 /* Pods-SpeechTimestamper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTimestamper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechTimestamper/Pods-SpeechTimestamper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2415CEC0043A1A1C194F7D4 /* Pods_SpeechTimestamper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeechTimestamper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,17 +83,30 @@
 			children = (
 				C3DEFBEE21DED3120072C31F /* AppDelegate.swift */,
 				C3DEFBF021DED3120072C31F /* ViewController.swift */,
-				C3DEFC0421DED5CC0072C31F /* annotations.pb.swift */,
-				C3DEFC0021DED5C80072C31F /* descriptor.pb.swift */,
-				C3DEFC0221DED5CC0072C31F /* http.pb.swift */,
-				C3DEFC0121DED5CC0072C31F /* language_service.grpc.swift */,
-				C3DEFC0321DED5CC0072C31F /* language_service.pb.swift */,
+				C3DEFC1621DED7820072C31F /* gRPC bindings */,
 				C3DEFBF221DED3120072C31F /* Main.storyboard */,
 				C3DEFBF521DED3130072C31F /* Assets.xcassets */,
 				C3DEFBF721DED3130072C31F /* LaunchScreen.storyboard */,
 				C3DEFBFA21DED3130072C31F /* Info.plist */,
 			);
 			path = SpeechTimestamper;
+			sourceTree = "<group>";
+		};
+		C3DEFC1621DED7820072C31F /* gRPC bindings */ = {
+			isa = PBXGroup;
+			children = (
+				C3DEFC2721DEDA330072C31F /* annotations.pb.swift */,
+				C3DEFC2B21DEDA330072C31F /* cloud_speech.grpc.swift */,
+				C3DEFC2921DEDA330072C31F /* cloud_speech.pb.swift */,
+				C3DEFC2821DEDA330072C31F /* code.pb.swift */,
+				C3DEFC2521DEDA320072C31F /* descriptor.pb.swift */,
+				C3DEFC2621DEDA320072C31F /* error_details.pb.swift */,
+				C3DEFC2421DEDA320072C31F /* http.pb.swift */,
+				C3DEFC2C21DEDA330072C31F /* operations.grpc.swift */,
+				C3DEFC2A21DEDA330072C31F /* operations.pb.swift */,
+				C3DEFC2321DEDA320072C31F /* status.pb.swift */,
+			);
+			path = "gRPC bindings";
 			sourceTree = "<group>";
 		};
 		C975A7F0975275120FD517C8 /* Frameworks */ = {
@@ -231,13 +254,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3DEFC0721DED5CD0072C31F /* http.pb.swift in Sources */,
-				C3DEFC0921DED5CD0072C31F /* annotations.pb.swift in Sources */,
-				C3DEFC0621DED5CD0072C31F /* language_service.grpc.swift in Sources */,
+				C3DEFC3521DEDA330072C31F /* cloud_speech.grpc.swift in Sources */,
+				C3DEFC3021DEDA330072C31F /* error_details.pb.swift in Sources */,
+				C3DEFC3121DEDA330072C31F /* annotations.pb.swift in Sources */,
+				C3DEFC3421DEDA330072C31F /* operations.pb.swift in Sources */,
+				C3DEFC3321DEDA330072C31F /* cloud_speech.pb.swift in Sources */,
+				C3DEFC2E21DEDA330072C31F /* http.pb.swift in Sources */,
+				C3DEFC3221DEDA330072C31F /* code.pb.swift in Sources */,
 				C3DEFBF121DED3120072C31F /* ViewController.swift in Sources */,
+				C3DEFC2D21DEDA330072C31F /* status.pb.swift in Sources */,
 				C3DEFBEF21DED3120072C31F /* AppDelegate.swift in Sources */,
-				C3DEFC0821DED5CD0072C31F /* language_service.pb.swift in Sources */,
-				C3DEFC0521DED5CD0072C31F /* descriptor.pb.swift in Sources */,
+				C3DEFC3621DEDA330072C31F /* operations.grpc.swift in Sources */,
+				C3DEFC2F21DEDA330072C31F /* descriptor.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,11 @@ if [ ! -d "googleapis" ]; then
 fi
 
 protoc \
- 	google/cloud/language/v1/language_service.proto \
+ 	google/cloud/speech/v1p1beta1/cloud_speech.proto \
+	google/longrunning/operations.proto \
+	google/rpc/status.proto \
+	google/rpc/code.proto \
+	google/rpc/error_details.proto \
 	google/api/annotations.proto \
 	google/api/http.proto \
 	google/protobuf/descriptor.proto \
