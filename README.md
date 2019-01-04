@@ -12,5 +12,5 @@ Demo iOS application leveraging Google Cloud Speech-to-Text via streaming gRPC. 
 1. Voilà!
 
 ## Requirements
-- Provide your Google Cloud Platform API key `GOOGLE_API_KEY` in `AppDelegate.swift`
+- Rename `Secrets.template.plist` to `Secrets.plist` and provide your Google Cloud Platform API key for the field `GOOGLE_API_KEY`.
 - If you'd like to run a fresh `pod update` to generate the most up-to-date protobuf definitions, you'll need [protobuf](https://github.com/apple/swift-protobuf) installed.
