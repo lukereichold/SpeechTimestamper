@@ -23,6 +23,6 @@ In cases where the raw text transcription of a piece of audio is known upfront, 
 
 ## gRPC
 
-This project uses gRPC instead of REST to communicate with GCP services. For basic functionality of the gRPC API for Swift, see [the Swift gRPC Overview](https://github.com/grpc/grpc-swift/blob/master/OVERVIEW.md).
+This project uses gRPC instead of REST to communicate with GCP services. (There is not yet [an official Google Cloud Client Library](https://cloud.google.com/apis/docs/cloud-client-libraries) for Swift). For basic functionality of the gRPC API for Swift, see [the Swift gRPC Overview](https://github.com/grpc/grpc-swift/blob/master/OVERVIEW.md).
 
 If you'd like to generate the most up-to-date protobuf definitions, you'll need [protobuf](https://github.com/apple/swift-protobuf) installed and then run a fresh `pod update`.
