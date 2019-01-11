@@ -2,7 +2,9 @@
 
 Generate an accurate, timestamped transcript given an audio file and its text.
 
-Demo iOS application leveraging Google Cloud Speech-to-Text via gRPC. This project can also be used as a general template for iOS applications to communicate with GCP services via gRPC.
+Demo iOS application leveraging Google Cloud Speech-to-Text via streaming gRPC. This project can also be used as a general template for iOS applications to communicate with GCP services via gRPC.
+
+For helpful information on the gRPC API for Swift, see [the Swift gRPC Overview](https://github.com/grpc/grpc-swift/blob/master/OVERVIEW.md).
 
 ## Big idea
 1. Record some speech
