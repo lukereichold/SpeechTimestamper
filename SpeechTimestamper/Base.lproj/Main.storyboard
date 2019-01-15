@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recording View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecordingViewController" customModule="SpeechTimestamper" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,21 +33,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZz-Hk-q2W">
-                                <rect key="frame" x="158" y="354" width="59" height="37"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Record">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-Mg-DKz">
                                 <rect key="frame" x="47.5" y="600" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Generate Timestamped Transcript"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJO-4i-fAL" customClass="RecordButton" customModule="SpeechTimestamper" customModuleProvider="target">
-                                <rect key="frame" x="172" y="416" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJO-4i-fAL" userLabel="Record Button" customClass="RecordButton" customModule="SpeechTimestamper" customModuleProvider="target">
+                                <rect key="frame" x="164.5" y="374" width="46" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -55,10 +48,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.88409674657534243" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rJO-4i-fAL" firstAttribute="top" secondItem="RZz-Hk-q2W" secondAttribute="bottom" constant="25" id="1rM-Kr-FVM"/>
                             <constraint firstItem="69P-Mg-DKz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yJ-Ul-e8R"/>
-                            <constraint firstItem="RZz-Hk-q2W" firstAttribute="top" secondItem="8yY-16-qcE" secondAttribute="bottom" constant="20" id="GjZ-4B-OHq"/>
-                            <constraint firstItem="RZz-Hk-q2W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jn5-qP-Ti6"/>
+                            <constraint firstItem="rJO-4i-fAL" firstAttribute="top" secondItem="8yY-16-qcE" secondAttribute="bottom" constant="40" id="EPs-UI-fIs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="69P-Mg-DKz" secondAttribute="bottom" constant="30" id="PVM-XC-yF6"/>
                             <constraint firstItem="8yY-16-qcE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="QlI-Fh-4Vb"/>
                             <constraint firstItem="rJO-4i-fAL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UrR-E7-Lio"/>
@@ -67,9 +58,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qmy-zn-L6i"/>
+                    <navigationItem key="navigationItem" title="Record" id="qmy-zn-L6i"/>
                     <connections>
-                        <outlet property="startStopRecordButton" destination="RZz-Hk-q2W" id="JEO-39-gGa"/>
+                        <outlet property="recordButton" destination="rJO-4i-fAL" id="VHB-Md-69k"/>
                         <outlet property="transcriptTextView" destination="8yY-16-qcE" id="lyD-WI-dnO"/>
                     </connections>
                 </viewController>

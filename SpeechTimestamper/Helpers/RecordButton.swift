@@ -2,9 +2,16 @@
 
 import UIKit
 
+protocol RecordButtonObserver: class {
+    func recordTapped()
+    func stopTapped()
+}
+
 final class RecordButton: UIButton {
-    var pathLayer: CAShapeLayer!
-    let animationDuration = 0.4
+    private var pathLayer: CAShapeLayer!
+    private let animationDuration = 0.4
+    
+    weak var observer: RecordButtonObserver?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +34,6 @@ final class RecordButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //lock the size to match the size of the camera button
         addConstraint(NSLayoutConstraint(item: self,
                                               attribute:.width,
                                               relatedBy:.equal,
@@ -44,10 +50,6 @@ final class RecordButton: UIButton {
                                               constant:66.0))
         
         setTitle("", for: .normal)
-//        imageView?.backgroundColor = .clear
-//        imageView?.tintColor = .clear
-        setImage(nil, for: .normal)
-        
         addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
         addTarget(self, action: #selector(touchDown), for: .touchDown)
     }
@@ -58,6 +60,13 @@ final class RecordButton: UIButton {
     
     override var isSelected: Bool {
         didSet {
+            
+            if isSelected {
+                observer?.recordTapped()
+            } else {
+                observer?.stopTapped()
+            }
+            
             let morph = CABasicAnimation(keyPath: "path")
             morph.duration = animationDuration
             morph.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)

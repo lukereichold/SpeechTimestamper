@@ -1,107 +1,94 @@
 import UIKit
 import AVFoundation
 
-let SAMPLE_RATE = 16000
-
 final class RecordingViewController: UIViewController {
     @IBOutlet private weak var transcriptTextView: UITextView!
-    @IBOutlet private weak var startStopRecordButton: UIButton!
+    @IBOutlet private weak var recordButton: RecordButton!
     
-    var audioData: NSMutableData!
-    
-    private var isRecording = false {
-        didSet {
-            if isRecording {
-                startRecording()
-            } else {
-                stopRecording()
-            }
-        }
-    }
+    private var recordingSession: AVAudioSession!
+    private var audioRecorder: AVAudioRecorder!
+    private var audioFileName: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Record"
         setupRecognizers()
-//        AudioController.sharedInstance.delegate = self
+        requestRecordingAccess()
     }
     
     private func setupRecognizers() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
-        startStopRecordButton.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
+        recordButton.observer = self
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-    @objc private func recordButtonTapped() {
-        isRecording.toggle()
-    }
-    
-    private func startRecording() {
-        startStopRecordButton.setTitle("Stop Recording", for: .normal)
-    }
-    
-    private func stopRecording() {
-        startStopRecordButton.setTitle("Start Recording", for: .normal)
+}
+
+// MARK: - Recording Logic
+
+extension RecordingViewController {
+    private func requestRecordingAccess() {
+        recordingSession = AVAudioSession.sharedInstance()
+
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .spokenAudio, options: [.defaultToSpeaker])
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [weak self] allowed in
+                DispatchQueue.main.async {
+                    if !allowed {
+                        self?.recordButton.isEnabled = false
+                        print("Failed to grant microphone recording permission!")
+                    }
+                }
+            }
+        } catch {
+            print("Failed to configure audio recording session!")
+        }
     }
 
-//    @IBAction func recordAudio(_ sender: NSObject) {
-//        let audioSession = AVAudioSession.sharedInstance()
-//        do {
-//            try audioSession.setCategory(AVAudioSession.Category.record)
-//        } catch {
-//
-//        }
-//        audioData = NSMutableData()
-//        _ = AudioController.sharedInstance.prepare(specifiedSampleRate: SAMPLE_RATE)
-//
-//        SpeechService.shared.sampleRate = SAMPLE_RATE
-//        _ = AudioController.sharedInstance.start()
-//    }
-//
-//    @IBAction func stopAudio(_ sender: NSObject) {
-//        _ = AudioController.sharedInstance.stop()
-//        SpeechRecognitionService.sharedInstance.stopStreaming()
-//    }
-//
-//    func processSampleData(_ data: Data) -> Void {
-//        audioData.append(data)
-//
-//        // We recommend sending samples in 100ms chunks
-//        let chunkSize : Int /* bytes/chunk */ = Int(0.1 /* seconds/chunk */
-//            * Double(SAMPLE_RATE) /* samples/second */
-//            * 2 /* bytes/sample */);
-//
-//        if (audioData.length > chunkSize) {
-//            SpeechRecognitionService.sharedInstance.streamAudioData(audioData,
-//                                                                    completion:
-//                { [weak self] (response, error) in
-//                    guard let strongSelf = self else {
-//                        return
-//                    }
-//
-//                    if let error = error {
-//                        strongSelf.textView.text = error.localizedDescription
-//                    } else if let response = response {
-//                        var finished = false
-//                        print(response)
-//                        for result in response.resultsArray! {
-//                            if let result = result as? StreamingRecognitionResult {
-//                                if result.isFinal {
-//                                    finished = true
-//                                }
-//                            }
-//                        }
-//                        strongSelf.textView.text = response.description
-//                        if finished {
-//                            strongSelf.stopAudio(strongSelf)
-//                        }
-//                    }
-//            })
-//            self.audioData = NSMutableData()
-//        }
-//    }
+    private func startRecording() {
+        let filename = String(Int.random(in: 0 ..< 1000000))
+        audioFileName = FileManager.default.documentsDirectory().appendingPathComponent("\(filename).m4a")
+
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+        } catch {
+            print("Error starting recording session")
+        }
+    }
+
+    private func finishRecording(success: Bool) {
+        print("Recording finished with success: \(success)")
+        audioRecorder.stop()
+        audioRecorder = nil
+    }
+}
+
+extension RecordingViewController: RecordButtonObserver {
+    func recordTapped() {
+        startRecording()
+    }
+    
+    func stopTapped() {
+        finishRecording(success: true)
+    }
+}
+
+extension RecordingViewController: AVAudioRecorderDelegate {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
 }

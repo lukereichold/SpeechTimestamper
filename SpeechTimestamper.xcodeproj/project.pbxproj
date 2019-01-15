@@ -30,6 +30,7 @@
 		C3DEFC7021DEF7DA0072C31F /* operations.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC6621DEF7DA0072C31F /* operations.grpc.swift */; };
 		C3DEFC7221DEFCBE0072C31F /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC7121DEFCBE0072C31F /* AudioController.swift */; };
 		C3DEFC7421DEFD6D0072C31F /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC7321DEFD6D0072C31F /* SpeechService.swift */; };
+		C3FCAD5921EEA06500FCB3E4 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FCAD5821EEA06500FCB3E4 /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C3DEFC6621DEF7DA0072C31F /* operations.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operations.grpc.swift; sourceTree = "<group>"; };
 		C3DEFC7121DEFCBE0072C31F /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		C3DEFC7321DEFD6D0072C31F /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		C3FCAD5821EEA06500FCB3E4 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		C97D325DB953B803F7DF3156 /* Pods-SpeechTimestamper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTimestamper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechTimestamper/Pods-SpeechTimestamper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2415CEC0043A1A1C194F7D4 /* Pods_SpeechTimestamper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeechTimestamper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C305382821ED60FA00A12027 /* RecordButton.swift */,
+				C3FCAD5821EEA06500FCB3E4 /* FileManager+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				C3DEFC6D21DEF7DA0072C31F /* error_details.pb.swift in Sources */,
 				C3DEFBEF21DED3120072C31F /* AppDelegate.swift in Sources */,
 				C305382621ED558900A12027 /* AlignmentResultsViewController.swift in Sources */,
+				C3FCAD5921EEA06500FCB3E4 /* FileManager+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
