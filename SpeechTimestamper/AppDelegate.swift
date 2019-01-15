@@ -10,15 +10,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let stringPath = Bundle.main.path(forResource: "short", ofType: "flac") ?? ""
 
-        let data = NSData(contentsOfFile: stringPath)! as Data
-        SpeechService.shared.transcribeAudioData(data) { result in
-            switch result {
-            case .success(let results):
-                print("success")
-            case .failure(let error):
-                print("bad")
-            }
-        }
+//        let data = NSData(contentsOfFile: stringPath)! as Data
+//        SpeechService.shared.transcribeAudioData(data) { result in
+//            switch result {
+//            case .success(let results):
+//                print("success")
+//            case .failure(let error):
+//                print("bad")
+//            }
+//        }
         
         return true
     }

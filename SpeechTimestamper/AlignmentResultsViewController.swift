@@ -1,10 +1,9 @@
 import UIKit
 
-class ViewController: UIViewController {
+final class AlignmentResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
 }
-

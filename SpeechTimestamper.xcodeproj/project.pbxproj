@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		24BF1A8D6C2186F2C2545BA2 /* Pods_SpeechTimestamper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2415CEC0043A1A1C194F7D4 /* Pods_SpeechTimestamper.framework */; };
+		C305382621ED558900A12027 /* AlignmentResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305382521ED558900A12027 /* AlignmentResultsViewController.swift */; };
+		C305382921ED60FA00A12027 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305382821ED60FA00A12027 /* RecordButton.swift */; };
 		C3DEFBEF21DED3120072C31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFBEE21DED3120072C31F /* AppDelegate.swift */; };
-		C3DEFBF121DED3120072C31F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFBF021DED3120072C31F /* ViewController.swift */; };
+		C3DEFBF121DED3120072C31F /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFBF021DED3120072C31F /* RecordingViewController.swift */; };
 		C3DEFBF421DED3120072C31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF221DED3120072C31F /* Main.storyboard */; };
 		C3DEFBF621DED3130072C31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF521DED3130072C31F /* Assets.xcassets */; };
 		C3DEFBF921DED3130072C31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFBF721DED3130072C31F /* LaunchScreen.storyboard */; };
@@ -28,15 +30,15 @@
 		C3DEFC7021DEF7DA0072C31F /* operations.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC6621DEF7DA0072C31F /* operations.grpc.swift */; };
 		C3DEFC7221DEFCBE0072C31F /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC7121DEFCBE0072C31F /* AudioController.swift */; };
 		C3DEFC7421DEFD6D0072C31F /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEFC7321DEFD6D0072C31F /* SpeechService.swift */; };
-		C3DEFC7721E014020072C31F /* short.flac in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFC7521E014020072C31F /* short.flac */; };
-		C3DEFC7821E014020072C31F /* short.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3DEFC7621E014020072C31F /* short.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89A6C38AE6B337A369DECD22 /* Pods-SpeechTimestamper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTimestamper.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechTimestamper/Pods-SpeechTimestamper.release.xcconfig"; sourceTree = "<group>"; };
+		C305382521ED558900A12027 /* AlignmentResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentResultsViewController.swift; sourceTree = "<group>"; };
+		C305382821ED60FA00A12027 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		C3DEFBEB21DED3120072C31F /* SpeechTimestamper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechTimestamper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DEFBEE21DED3120072C31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3DEFBF021DED3120072C31F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3DEFBF021DED3120072C31F /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		C3DEFBF321DED3120072C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3DEFBF521DED3130072C31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3DEFBF821DED3130072C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		C3DEFC6621DEF7DA0072C31F /* operations.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operations.grpc.swift; sourceTree = "<group>"; };
 		C3DEFC7121DEFCBE0072C31F /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		C3DEFC7321DEFD6D0072C31F /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
-		C3DEFC7521E014020072C31F /* short.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = short.flac; sourceTree = "<group>"; };
-		C3DEFC7621E014020072C31F /* short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = short.wav; sourceTree = "<group>"; };
 		C97D325DB953B803F7DF3156 /* Pods-SpeechTimestamper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTimestamper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechTimestamper/Pods-SpeechTimestamper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2415CEC0043A1A1C194F7D4 /* Pods_SpeechTimestamper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeechTimestamper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C305382721ED60E000A12027 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C305382821ED60FA00A12027 /* RecordButton.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		C3DEFBE221DED3120072C31F = {
 			isa = PBXGroup;
 			children = (
@@ -96,12 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				C3DEFBEE21DED3120072C31F /* AppDelegate.swift */,
-				C3DEFBF021DED3120072C31F /* ViewController.swift */,
+				C3DEFBF021DED3120072C31F /* RecordingViewController.swift */,
+				C305382521ED558900A12027 /* AlignmentResultsViewController.swift */,
 				C3DEFC7121DEFCBE0072C31F /* AudioController.swift */,
 				C3DEFC7321DEFD6D0072C31F /* SpeechService.swift */,
-				C3DEFC7521E014020072C31F /* short.flac */,
-				C3DEFC7621E014020072C31F /* short.wav */,
 				C3DEFC1621DED7820072C31F /* gRPC bindings */,
+				C305382721ED60E000A12027 /* Helpers */,
 				C3DEFC3D21DEE2AB0072C31F /* Keys.swift */,
 				C3DEFC3921DEE11C0072C31F /* Secrets.plist */,
 				C3DEFC3B21DEE19B0072C31F /* Secrets.template.plist */,
@@ -209,10 +217,8 @@
 			files = (
 				C3DEFC3A21DEE11C0072C31F /* Secrets.plist in Resources */,
 				C3DEFBF921DED3130072C31F /* LaunchScreen.storyboard in Resources */,
-				C3DEFC7721E014020072C31F /* short.flac in Resources */,
 				C3DEFBF621DED3130072C31F /* Assets.xcassets in Resources */,
 				C3DEFBF421DED3120072C31F /* Main.storyboard in Resources */,
-				C3DEFC7821E014020072C31F /* short.wav in Resources */,
 				C3DEFC3C21DEE19B0072C31F /* Secrets.template.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,11 +295,13 @@
 				C3DEFC6F21DEF7DA0072C31F /* descriptor.pb.swift in Sources */,
 				C3DEFC6E21DEF7DA0072C31F /* annotations.pb.swift in Sources */,
 				C3DEFC6921DEF7DA0072C31F /* code.pb.swift in Sources */,
-				C3DEFBF121DED3120072C31F /* ViewController.swift in Sources */,
+				C3DEFBF121DED3120072C31F /* RecordingViewController.swift in Sources */,
+				C305382921ED60FA00A12027 /* RecordButton.swift in Sources */,
 				C3DEFC7021DEF7DA0072C31F /* operations.grpc.swift in Sources */,
 				C3DEFC6B21DEF7DA0072C31F /* status.pb.swift in Sources */,
 				C3DEFC6D21DEF7DA0072C31F /* error_details.pb.swift in Sources */,
 				C3DEFBEF21DED3120072C31F /* AppDelegate.swift in Sources */,
+				C305382621ED558900A12027 /* AlignmentResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

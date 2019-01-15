@@ -48,15 +48,15 @@ final class SpeechService {
                     return
                 }
                 
-                DispatchQueue.global().async {
+                DispatchQueue.global().async { [weak self] in
                     var operation: Google_Longrunning_Operation = longRunningOperation!
                     repeat {
-                        if let op = self.pollOperation(withName: operation.name) {
+                        if let op = self?.pollOperation(withName: operation.name) {
                             operation = op
                         }
                     } while !operation.done
                     
-                    self.handleCompletedOperation(operation, then: completion)
+                    self?.handleCompletedOperation(operation, then: completion)
                 }
             }
         } catch let error {
