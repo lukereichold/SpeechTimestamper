@@ -5,6 +5,7 @@ platform :ios, '11.0'
 
 target 'SpeechTimestamper' do
   pod 'SwiftGRPC'
+  pod 'NVActivityIndicatorView'
 end
 
 post_install do |installer|

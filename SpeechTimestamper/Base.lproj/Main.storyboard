@@ -33,7 +33,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-Mg-DKz">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-Mg-DKz">
                                 <rect key="frame" x="47.5" y="600" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Generate Timestamped Transcript"/>
@@ -45,11 +45,27 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M3-mm-R5Y" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="147.5" y="293.5" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="LZy-Cc-X38"/>
+                                    <constraint firstAttribute="height" constant="80" id="uxf-bh-LqL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="lineScale"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.79607843140000001" green="0.1764705882" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.88409674657534243" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1M3-mm-R5Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="09o-Kr-pzQ"/>
                             <constraint firstItem="69P-Mg-DKz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yJ-Ul-e8R"/>
                             <constraint firstItem="rJO-4i-fAL" firstAttribute="top" secondItem="8yY-16-qcE" secondAttribute="bottom" constant="40" id="EPs-UI-fIs"/>
+                            <constraint firstItem="1M3-mm-R5Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iea-UD-KXw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="69P-Mg-DKz" secondAttribute="bottom" constant="30" id="PVM-XC-yF6"/>
                             <constraint firstItem="8yY-16-qcE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="QlI-Fh-4Vb"/>
                             <constraint firstItem="rJO-4i-fAL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UrR-E7-Lio"/>
@@ -60,6 +76,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="qmy-zn-L6i"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="1M3-mm-R5Y" id="ZCH-uF-4ZY"/>
+                        <outlet property="generateButton" destination="69P-Mg-DKz" id="jAR-rY-auw"/>
                         <outlet property="recordButton" destination="rJO-4i-fAL" id="VHB-Md-69k"/>
                         <outlet property="transcriptTextView" destination="8yY-16-qcE" id="lyD-WI-dnO"/>
                     </connections>
@@ -85,6 +103,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1v-pe-zQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+        <!--Record-->
+        <scene sceneID="vcE-qm-USG">
+            <objects>
+                <viewController storyboardIdentifier="AlignmentResultsViewController" id="58z-tj-cr8" customClass="AlignmentResultsViewController" customModule="SpeechTimestamper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ykk-RO-ljm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.88409674660000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vL1-Is-sjH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Record" id="ByQ-Ki-EKN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpj-Me-qd3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="134"/>
         </scene>
     </scenes>
 </document>

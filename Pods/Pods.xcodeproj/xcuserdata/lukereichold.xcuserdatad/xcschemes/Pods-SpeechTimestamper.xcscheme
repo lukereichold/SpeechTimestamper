@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B628836208793681157FD9F4908D401"
+               BlueprintIdentifier = "AE62CAA3ADAA0DB7969373B571376589"
                BuildableName = "Pods_SpeechTimestamper.framework"
                BlueprintName = "Pods-SpeechTimestamper"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B628836208793681157FD9F4908D401"
+            BlueprintIdentifier = "AE62CAA3ADAA0DB7969373B571376589"
             BuildableName = "Pods_SpeechTimestamper.framework"
             BlueprintName = "Pods-SpeechTimestamper"
             ReferencedContainer = "container:Pods.xcodeproj">

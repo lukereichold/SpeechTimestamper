@@ -28,4 +28,4 @@ protoc \
 	--swiftgrpc_out=googleapis
 
 # move Swift files to the sources directory
-find googleapis -name "*.swift" -exec mv {} SpeechTimestamper \;
+find googleapis -name "*.swift" -exec mv {} "SpeechTimestamper/gRPC bindings" \;

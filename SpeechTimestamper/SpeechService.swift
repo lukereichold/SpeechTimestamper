@@ -12,7 +12,6 @@ enum SpeechServiceResponse {
 final class SpeechService {
     private var speechClient: Google_Cloud_Speech_V1p1beta1_SpeechServiceClient!
     private var operationsClient: Google_Longrunning_OperationsServiceClient!
-    var sampleRate: Int = 12000
     
     static let shared = SpeechService()
     
@@ -29,8 +28,8 @@ final class SpeechService {
         
         var recognitionConfig = Google_Cloud_Speech_V1p1beta1_RecognitionConfig()
         recognitionConfig.encoding = .flac // linear16 otherwise
-        recognitionConfig.sampleRateHertz = Int32(sampleRate)
-        recognitionConfig.languageCode = "zh-cmn"
+        recognitionConfig.sampleRateHertz = Int32(AudioController.shared.sampleRate)
+        recognitionConfig.languageCode = "en-US"
         recognitionConfig.enableWordTimeOffsets = true
         
         var audio = Google_Cloud_Speech_V1p1beta1_RecognitionAudio()
