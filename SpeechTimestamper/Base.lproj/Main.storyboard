@@ -104,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
-        <!--Record-->
+        <!--Timestamped Results-->
         <scene sceneID="vcE-qm-USG">
             <objects>
                 <viewController storyboardIdentifier="AlignmentResultsViewController" id="58z-tj-cr8" customClass="AlignmentResultsViewController" customModule="SpeechTimestamper" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,7 +114,8 @@
                         <color key="backgroundColor" white="0.88409674660000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vL1-Is-sjH"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Record" id="ByQ-Ki-EKN"/>
+                    <navigationItem key="navigationItem" title="Timestamped Results" id="ByQ-Ki-EKN"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpj-Me-qd3" sceneMemberID="firstResponder"/>
             </objects>

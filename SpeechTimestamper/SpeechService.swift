@@ -27,7 +27,7 @@ final class SpeechService {
                              completion: @escaping SpeechServiceCompletion) {
         
         var recognitionConfig = Google_Cloud_Speech_V1p1beta1_RecognitionConfig()
-        recognitionConfig.encoding = .flac // linear16 otherwise
+        recognitionConfig.encoding = .linear16
         recognitionConfig.sampleRateHertz = Int32(AudioController.shared.sampleRate)
         recognitionConfig.languageCode = "en-US"
         recognitionConfig.enableWordTimeOffsets = true

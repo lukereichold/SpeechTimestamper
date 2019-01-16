@@ -1,5 +1,4 @@
 import UIKit
-import SwiftGRPC
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

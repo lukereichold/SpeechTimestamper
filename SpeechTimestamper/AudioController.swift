@@ -8,7 +8,7 @@ protocol AudioControllerDelegate: class {
 final class AudioController: NSObject {
     weak var delegate: AudioControllerDelegate?
     static let shared = AudioController()
-    let sampleRate = 12000
+    let sampleRate = 16_000
     var audioFileName: URL!
     
     private var recordingSession: AVAudioSession!
@@ -39,21 +39,21 @@ final class AudioController: NSObject {
     
     func startRecording() {
         let filename = String(Int.random(in: 0 ..< 1000000))
-        audioFileName = FileManager.default.documentsDirectory().appendingPathComponent("\(filename).m4a")
+        audioFileName = FileManager.default.documentsDirectory().appendingPathComponent("\(filename).caf")
         
-        let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+        let recordSettings: [String: Any] = [
             AVSampleRateKey: sampleRate,
             AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
+            AVEncoderBitRateKey: 16,
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: recordSettings)
             audioRecorder.delegate = self
             audioRecorder.record()
         } catch {
-            print("Error starting recording session")
+            print("Error starting recording session: \(error.localizedDescription)")
         }
     }
     
