@@ -111,11 +111,36 @@
                     <view key="view" contentMode="scaleToFill" id="ykk-RO-ljm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Transcript from service goes here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-BV-fv6">
+                                <rect key="frame" x="15" y="84" width="345" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="kJN-rP-h4D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="0.88409674660000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ez4-BV-fv6" firstAttribute="leading" secondItem="vL1-Is-sjH" secondAttribute="leading" constant="15" id="26y-uB-GYU"/>
+                            <constraint firstAttribute="trailing" secondItem="ez4-BV-fv6" secondAttribute="trailing" constant="15" id="iKW-Ss-J4t"/>
+                            <constraint firstItem="ez4-BV-fv6" firstAttribute="top" secondItem="vL1-Is-sjH" secondAttribute="top" constant="20" id="jQ2-cZ-uP8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vL1-Is-sjH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Timestamped Results" id="ByQ-Ki-EKN"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="resultsTextView" destination="ez4-BV-fv6" id="MR7-0n-rsl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpj-Me-qd3" sceneMemberID="firstResponder"/>
             </objects>

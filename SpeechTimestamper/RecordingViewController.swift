@@ -33,7 +33,9 @@ final class RecordingViewController: UIViewController {
         SpeechService.shared.transcribeAudioData(data) { [weak self] (response) -> (Void) in
             switch response {
             case .success(let results):
-                self?.presentResults(results)
+                DispatchQueue.main.async {
+                    self?.presentResults(results)
+                }
             case .failure(let error):
                 print("Speech Service error: \(error)")
             }
@@ -45,8 +47,8 @@ final class RecordingViewController: UIViewController {
     
     private func presentResults(_ results: [RecognitionResult]) {
         let resultsVC = storyboard?.instantiateViewController(withIdentifier: "AlignmentResultsViewController") as! AlignmentResultsViewController
-        resultsVC.audioFileName = AudioController.shared.audioFileName
         resultsVC.recognitionResults = results
+        resultsVC.providedTranscript = transcriptTextView.text
         navigationController?.pushViewController(resultsVC, animated: true)
     }
     
