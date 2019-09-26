@@ -46,6 +46,7 @@ extension AlignmentResultsViewController {
     /// TODO
     private func performAlignment() {
         
+        resetAlignedTextView()
     }
     
     private func startTimer() {
@@ -57,8 +58,8 @@ extension AlignmentResultsViewController {
     }
     
     private func updateAlignedText(for currentTime: TimeInterval) {
-
-        guard let idx = transcribedWords?.firstIndex(where: { $0.startTimeFloat >= currentTime }) else {
+        
+        guard let idx = transcribedWords?.lastIndex(where: { currentTime >= $0.startTimeFloat }) else {
             return
         }
         
@@ -67,6 +68,13 @@ extension AlignmentResultsViewController {
         attributedString.addAttribute(.font, value: UIFont(name: "PingFangSC-Regular", size: 30)!, range: NSMakeRange(0, transcribedWords!.count))
         attributedString.addAttribute(.backgroundColor, value: UIColor.yellow, range: NSMakeRange(idx, 1))
         
+        alignedTextView.attributedText = attributedString
+    }
+    
+    func resetAlignedTextView() {
+        let fullText = transcribedWords?.map { $0.word }.joined() ?? ""
+        let attributedString = NSMutableAttributedString(string: fullText)
+        attributedString.addAttribute(.font, value: UIFont(name: "PingFangSC-Regular", size: 30)!, range: NSMakeRange(0, transcribedWords!.count))
         alignedTextView.attributedText = attributedString
     }
     
@@ -101,5 +109,6 @@ extension AlignmentResultsViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         playButton.isEnabled = true
         timer.invalidate()
+        resetAlignedTextView()
     }
 }
