@@ -29,9 +29,9 @@ final class SpeechService {
         var recognitionConfig = Google_Cloud_Speech_V1p1beta1_RecognitionConfig()
         recognitionConfig.encoding = .linear16
         recognitionConfig.sampleRateHertz = Int32(AudioController.shared.sampleRate)
-        recognitionConfig.languageCode = "en-US"
+        recognitionConfig.languageCode = "zh-cn"
         recognitionConfig.enableWordTimeOffsets = true
-        
+        recognitionConfig.enableAutomaticPunctuation = true
         var audio = Google_Cloud_Speech_V1p1beta1_RecognitionAudio()
         audio.content = audioData
         

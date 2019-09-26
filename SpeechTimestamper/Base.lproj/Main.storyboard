@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OJT-53-5TA">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OJT-53-5TA">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecordingViewController" customModule="SpeechTimestamper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter text of spoken audio. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8yY-16-qcE">
-                                <rect key="frame" x="15" y="84" width="345" height="250"/>
+                                <rect key="frame" x="15" y="108" width="345" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="G0Z-TI-2TT"/>
@@ -34,19 +31,19 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-Mg-DKz">
-                                <rect key="frame" x="47.5" y="600" width="280" height="37"/>
+                                <rect key="frame" x="47.666666666666657" y="711" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Generate Timestamped Transcript"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJO-4i-fAL" userLabel="Record Button" customClass="RecordButton" customModule="SpeechTimestamper" customModuleProvider="target">
-                                <rect key="frame" x="164.5" y="374" width="46" height="30"/>
+                                <rect key="frame" x="164.66666666666666" y="398" width="46" height="30"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M3-mm-R5Y" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="147.5" y="293.5" width="80" height="80"/>
+                                <rect key="frame" x="147.66666666666666" y="366" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="LZy-Cc-X38"/>
@@ -92,7 +89,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OJT-53-5TA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yGI-ci-pnz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -104,19 +101,19 @@
             </objects>
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
-        <!--Timestamped Results-->
+        <!--Transcribed Results-->
         <scene sceneID="vcE-qm-USG">
             <objects>
                 <viewController storyboardIdentifier="AlignmentResultsViewController" id="58z-tj-cr8" customClass="AlignmentResultsViewController" customModule="SpeechTimestamper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ykk-RO-ljm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Transcript from service goes here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-BV-fv6">
-                                <rect key="frame" x="15" y="84" width="345" height="250"/>
+                                <rect key="frame" x="15" y="131" width="345" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="kJN-rP-h4D"/>
+                                    <constraint firstAttribute="height" constant="200" id="kJN-rP-h4D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -127,18 +124,72 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloud Speech Transcription, with timestamps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-AD-ND8">
+                                <rect key="frame" x="15" y="103" width="324" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original Script, time-aligned to audio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqo-TX-IIX">
+                                <rect key="frame" x="16" y="425" width="262.66666666666669" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May contain errors, lack punctuation, etc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auf-Qc-5zU">
+                                <rect key="frame" x="15" y="341" width="251" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ukL-im-YAP">
+                                <rect key="frame" x="16" y="453" width="345" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="YdY-p1-miJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6W-5F-bdc">
+                                <rect key="frame" x="172" y="624" width="31" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="58z-tj-cr8" eventType="touchUpInside" id="LTL-8X-qgx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.88409674660000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aLb-AD-ND8" firstAttribute="top" secondItem="vL1-Is-sjH" secondAttribute="top" constant="15" id="1UU-Vd-btH"/>
                             <constraint firstItem="ez4-BV-fv6" firstAttribute="leading" secondItem="vL1-Is-sjH" secondAttribute="leading" constant="15" id="26y-uB-GYU"/>
+                            <constraint firstItem="auf-Qc-5zU" firstAttribute="leading" secondItem="ez4-BV-fv6" secondAttribute="leading" id="5iZ-UE-UWx"/>
+                            <constraint firstItem="aLb-AD-ND8" firstAttribute="leading" secondItem="ez4-BV-fv6" secondAttribute="leading" id="8Y6-SX-Y4T"/>
+                            <constraint firstItem="rqo-TX-IIX" firstAttribute="leading" secondItem="auf-Qc-5zU" secondAttribute="leading" constant="1" id="9Ul-eK-fIs"/>
+                            <constraint firstItem="rqo-TX-IIX" firstAttribute="top" secondItem="auf-Qc-5zU" secondAttribute="bottom" constant="68.333333333333343" id="JaW-mX-37z"/>
+                            <constraint firstItem="g6W-5F-bdc" firstAttribute="top" secondItem="ukL-im-YAP" secondAttribute="bottom" constant="21" id="QY2-Ul-6hO"/>
                             <constraint firstAttribute="trailing" secondItem="ez4-BV-fv6" secondAttribute="trailing" constant="15" id="iKW-Ss-J4t"/>
-                            <constraint firstItem="ez4-BV-fv6" firstAttribute="top" secondItem="vL1-Is-sjH" secondAttribute="top" constant="20" id="jQ2-cZ-uP8"/>
+                            <constraint firstItem="ukL-im-YAP" firstAttribute="top" secondItem="rqo-TX-IIX" secondAttribute="bottom" constant="10" id="kTs-OC-FRE"/>
+                            <constraint firstItem="ukL-im-YAP" firstAttribute="width" secondItem="ez4-BV-fv6" secondAttribute="width" id="kxd-sf-0QQ"/>
+                            <constraint firstItem="g6W-5F-bdc" firstAttribute="centerX" secondItem="ykk-RO-ljm" secondAttribute="centerX" id="qpM-06-3xd"/>
+                            <constraint firstItem="ukL-im-YAP" firstAttribute="leading" secondItem="rqo-TX-IIX" secondAttribute="leading" id="siL-9v-jE5"/>
+                            <constraint firstItem="ez4-BV-fv6" firstAttribute="top" secondItem="aLb-AD-ND8" secondAttribute="bottom" constant="10" id="v6c-kF-cQB"/>
+                            <constraint firstItem="auf-Qc-5zU" firstAttribute="top" secondItem="ez4-BV-fv6" secondAttribute="bottom" constant="10" id="zLh-f6-vcZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vL1-Is-sjH"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Timestamped Results" id="ByQ-Ki-EKN"/>
+                    <navigationItem key="navigationItem" title="Transcribed Results" id="ByQ-Ki-EKN"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="alignedTextView" destination="ukL-im-YAP" id="UiK-m5-fHX"/>
+                        <outlet property="playButton" destination="g6W-5F-bdc" id="iFt-yA-LGy"/>
                         <outlet property="resultsTextView" destination="ez4-BV-fv6" id="MR7-0n-rsl"/>
                     </connections>
                 </viewController>
