@@ -47,8 +47,8 @@ final class RecordingViewController: UIViewController {
     
     private func presentResults(_ results: [RecognitionResult]) {
         let resultsVC = storyboard?.instantiateViewController(withIdentifier: "AlignmentResultsViewController") as! AlignmentResultsViewController
-        resultsVC.recognitionResults = results
         resultsVC.providedTranscript = transcriptTextView.text
+        resultsVC.recognitionResults = results
         navigationController?.pushViewController(resultsVC, animated: true)
     }
     

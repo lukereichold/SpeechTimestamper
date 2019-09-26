@@ -43,8 +43,34 @@ extension AlignmentResultsViewController {
             }.joined(separator: ", ")
     }
     
-    /// TODO
     private func performAlignment() {
+        guard let transcribed = transcribedWords else { return }
+
+        let actualWords = providedTranscript!.map { String($0) }
+
+        let txWords = transcribed.map { $0.word }
+
+        let diff = actualWords.difference(from: txWords)
+        debugPrint(diff)
+        
+        // modify the txWords to make them look like original
+        for change in diff {
+            switch change {
+            case .remove(let offset, _, _):
+                transcribedWords?.remove(at: offset)
+            case .insert(let offset, let element, _):
+                var newStartTime = Double()
+                if let previousWordTime = transcribedWords![safe: offset-1]?.startTimeFloat {
+                    newStartTime = previousWordTime
+                    if let nextWordTime = transcribedWords![safe: offset]?.startTimeFloat {
+                        newStartTime = (previousWordTime + nextWordTime) / 2.0
+                    }
+                }
+                let newWord = Word(word: element, startTime: Int32(newStartTime), startTimeFloat: newStartTime)
+                transcribedWords?.insert(newWord, at: offset)
+                break
+            }
+        }
         
         resetAlignedTextView()
     }
@@ -110,5 +136,11 @@ extension AlignmentResultsViewController: AVAudioPlayerDelegate {
         playButton.isEnabled = true
         timer.invalidate()
         resetAlignedTextView()
+    }
+}
+
+extension Array {
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

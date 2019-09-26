@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter text of spoken audio. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8yY-16-qcE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="计划出现了一些问题，我们正在解决。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8yY-16-qcE">
                                 <rect key="frame" x="15" y="108" width="345" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
