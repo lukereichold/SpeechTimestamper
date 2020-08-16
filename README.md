@@ -1,5 +1,8 @@
 # Speech Timestamper
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/lukereichold/SpeechTimestamper/blob/master/LICENSE) 
+[![Twitter](https://img.shields.io/badge/twitter-@lreichold-blue.svg?style=flat)](https://twitter.com/lreichold)
+
 **Demo iOS application to generate an accurately timestamped transcript given an audio file and its pre-supplied text.**
 
 It leverages Google Cloud Platform's Speech-to-Text API for its _[time offsets](https://cloud.google.com/speech-to-text/docs/async-time-offsets)_ feature (that is, returning the absolute timestamp of each word relative to the beginning of the audio). Any mistranscriptions from the service can then be corrected using the pre-supplied text and a sequence alignment algorithm.
